@@ -1,19 +1,462 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Coffee Shop</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew Haven - Artisan Coffee House</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>☕ My Coffee Shop</h1>
-  <h2>Menu</h2>
-  <div id="menu"></div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">Brew Haven</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <h2>Order</h2>
-  <input type="number" id="itemId" placeholder="Enter Coffee ID" />
-  <button onclick="placeOrder()">Order Coffee</button>
-  <p id="orderResponse"></p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Brew Haven</h1>
+            <p>Where Every Cup Tells a Story</p>
+            <a href="#menu" class="cta-button">Explore Our Menu</a>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2>Our Story</h2>
+                <p>Welcome to Brew Haven, where passion meets perfection in every cup. Since 2015, we've been dedicated to sourcing the finest beans from around the world and roasting them to perfection right here in our shop.</p>
+                <p>Our expert baristas craft each beverage with care, ensuring that every sip delivers an unforgettable experience. Whether you're a coffee connoisseur or just beginning your journey, we're here to guide you through the rich world of specialty coffee.</p>
+                <p>More than just a coffee shop, we're a community hub where friendships brew, ideas percolate, and moments are savored. Come for the coffee, stay for the atmosphere.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=800" alt="Coffee Shop Interior">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="menu-container">
+            <h2>Our Menu</h2>
+            <p class="menu-subtitle">Handcrafted with passion, served with love</p>
+            
+            <div class="menu-tabs">
+                <button class="tab-button active" onclick="showCategory('coffee')">Coffee</button>
+                <button class="tab-button" onclick="showCategory('specialty')">Specialty Drinks</button>
+                <button class="tab-button" onclick="showCategory('pastries')">Pastries</button>
+                <button class="tab-button" onclick="showCategory('food')">Food</button>
+            </div>
+
+            <!-- Coffee Category -->
+            <div id="coffee" class="menu-category menu-grid active">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400" alt="Espresso" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Espresso</h3>
+                            <span class="menu-item-price">₱120</span>
+                        </div>
+                        <p>Rich, bold shot of pure coffee perfection. The foundation of all great coffee drinks.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=400" alt="Cappuccino" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Cappuccino</h3>
+                            <span class="menu-item-price">₱150</span>
+                        </div>
+                        <p>Equal parts espresso, steamed milk, and velvety foam. A classic Italian masterpiece.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=400" alt="Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Café Latte</h3>
+                            <span class="menu-item-price">₱160</span>
+                        </div>
+                        <p>Smooth espresso with steamed milk and a touch of foam. Comfort in a cup.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400" alt="Americano" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Americano</h3>
+                            <span class="menu-item-price">₱130</span>
+                        </div>
+                        <p>Espresso diluted with hot water for a smooth, full-bodied coffee experience.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1545665225-b23b99e4d45e?w=400" alt="Cold Brew" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Cold Brew</h3>
+                            <span class="menu-item-price">₱170</span>
+                        </div>
+                        <p>Slowly steeped for 16 hours, delivering a smooth, naturally sweet flavor.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="French Press" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>French Press</h3>
+                            <span class="menu-item-price">₱145</span>
+                        </div>
+                        <p>Full immersion brewing that highlights the coffee's natural oils and flavors.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialty Drinks Category -->
+            <div id="specialty" class="menu-category menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?w=400" alt="Caramel Macchiato" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Caramel Macchiato</h3>
+                            <span class="menu-item-price">₱185</span>
+                        </div>
+                        <p>Vanilla-flavored latte marked with espresso and drizzled with caramel.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1578374173705-0a2e911f0e28?w=400" alt="Mocha" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Mocha</h3>
+                            <span class="menu-item-price">₱180</span>
+                        </div>
+                        <p>Rich chocolate and espresso harmonize with steamed milk and whipped cream.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400" alt="Vanilla Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Vanilla Bean Latte</h3>
+                            <span class="menu-item-price">₱170</span>
+                        </div>
+                        <p>Smooth espresso infused with real vanilla bean and steamed milk.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=400" alt="Matcha Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Matcha Latte</h3>
+                            <span class="menu-item-price">₱195</span>
+                        </div>
+                        <p>Premium Japanese matcha whisked with steamed milk for a creamy finish.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400" alt="Chai Latte" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Chai Latte</h3>
+                            <span class="menu-item-price">₱160</span>
+                        </div>
+                        <p>Aromatic spiced tea blended with steamed milk and a hint of sweetness.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400" alt="Iced Caramel" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Iced Caramel Fusion</h3>
+                            <span class="menu-item-price">₱200</span>
+                        </div>
+                        <p>Cold brew coffee with caramel, cream, and a touch of vanilla over ice.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pastries Category -->
+            <div id="pastries" class="menu-category menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Croissant" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Butter Croissant</h3>
+                            <span class="menu-item-price">₱120</span>
+                        </div>
+                        <p>Flaky, buttery layers of French pastry perfection, baked fresh daily.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1607958996333-41aef7caefaa?w=400" alt="Chocolate Muffin" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Double Chocolate Muffin</h3>
+                            <span class="menu-item-price">₱135</span>
+                        </div>
+                        <p>Moist chocolate muffin loaded with chocolate chips. A chocolate lover's dream.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400" alt="Blueberry Scone" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Blueberry Scone</h3>
+                            <span class="menu-item-price">₱125</span>
+                        </div>
+                        <p>Tender scone bursting with fresh blueberries and a hint of lemon zest.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=400" alt="Cinnamon Roll" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Cinnamon Roll</h3>
+                            <span class="menu-item-price">₱150</span>
+                        </div>
+                        <p>Warm, gooey cinnamon swirls topped with cream cheese frosting.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=400" alt="Almond Biscotti" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Almond Biscotti</h3>
+                            <span class="menu-item-price">₱110</span>
+                        </div>
+                        <p>Twice-baked Italian cookies with toasted almonds, perfect for dipping.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a0b3b64e6563?w=400" alt="Banana Bread" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Banana Walnut Bread</h3>
+                            <span class="menu-item-price">₱120</span>
+                        </div>
+                        <p>Homemade banana bread with walnuts, moist and perfectly spiced.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Category -->
+            <div id="food" class="menu-category menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?w=400" alt="Avocado Toast" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Avocado Toast</h3>
+                            <span class="menu-item-price">₱285</span>
+                        </div>
+                        <p>Smashed avocado on sourdough with cherry tomatoes, feta, and chili flakes.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=400" alt="Breakfast Sandwich" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Breakfast Sandwich</h3>
+                            <span class="menu-item-price">₱250</span>
+                        </div>
+                        <p>Egg, cheese, and your choice of bacon or sausage on a toasted bagel.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400" alt="Turkey Sandwich" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Turkey & Swiss</h3>
+                            <span class="menu-item-price">₱300</span>
+                        </div>
+                        <p>Roasted turkey, Swiss cheese, lettuce, tomato, and honey mustard.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=400" alt="Caprese Sandwich" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Caprese Panini</h3>
+                            <span class="menu-item-price">₱295</span>
+                        </div>
+                        <p>Fresh mozzarella, tomatoes, basil, and balsamic glaze on ciabatta.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1547496502-affa22d38842?w=400" alt="Acai Bowl" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Açaí Bowl</h3>
+                            <span class="menu-item-price">₱350</span>
+                        </div>
+                        <p>Açaí blend topped with granola, fresh berries, banana, and honey.</p>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" alt="Quinoa Bowl" class="menu-item-image">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header">
+                            <h3>Quinoa Power Bowl</h3>
+                            <span class="menu-item-price">₱365</span>
+                        </div>
+                        <p>Quinoa, roasted vegetables, chickpeas, and tahini dressing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <h2>Our Atmosphere</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600" alt="Coffee Art">
+                <div class="gallery-overlay">
+                    <h3>Latte Art</h3>
+                    <p>Every cup is a canvas</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600" alt="Brewing Process">
+                <div class="gallery-overlay">
+                    <h3>Pour Over</h3>
+                    <p>Precision in every pour</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600" alt="Coffee Beans">
+                <div class="gallery-overlay">
+                    <h3>Fresh Roasted</h3>
+                    <p>Quality beans daily</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600" alt="Cozy Interior">
+                <div class="gallery-overlay">
+                    <h3>Cozy Space</h3>
+                    <p>Your second home</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=600" alt="Barista at Work">
+                <div class="gallery-overlay">
+                    <h3>Expert Baristas</h3>
+                    <p>Crafted with passion</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=600" alt="Outdoor Seating">
+                <div class="gallery-overlay">
+                    <h3>Outdoor Seating</h3>
+                    <p>Enjoy the fresh air</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Visit Us</h2>
+            <p class="contact-subtitle">We'd love to serve you</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h3>Location</h3>
+                            <p>123 Bonifacio Global City<br>Taguig, Metro Manila 1634</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">⏰</div>
+                        <div class="info-content">
+                            <h3>Hours</h3>
+                            <p>Monday - Friday: 7am - 8pm<br>
+                            Saturday - Sunday: 8am - 9pm</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>Contact</h3>
+                            <p>Phone: +63 917 123 4567<br>
+                            Email: hello@brewhaven.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#">📘</a>
+                <a href="#">📷</a>
+                <a href="#">🐦</a>
+            </div>
+            <p>&copy; 2026 Brew Haven. All rights reserved. Crafted with ☕ and ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
